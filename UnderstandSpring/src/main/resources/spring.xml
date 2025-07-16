@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- autowire byType: it will inject Laptop bean into com field -->
+    <bean id="alien1" class="org.example.Alien">
+        <property name="age" value="22"/>
+    </bean>
+
+    <!-- Spring looks for a bean of type 'Computer' -->
+    <bean id="laptop-test" class="org.example.Laptop" lazy-init="true" />
+    <bean id="com2" class="org.example.Desktop" />
+    <bean id="com3" class="org.example.Desktop"  primary="true"/>
+
+</beans>
